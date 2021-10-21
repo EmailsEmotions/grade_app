@@ -11,8 +11,81 @@ main {
 
 .text-section {
   width: calc(100% - 40px);
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .text-section-text {
+}
+
+.section-title {
+  font-size: 2.4em;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#text-section-content {
+  font-size: 1.2em;
+  padding: 20px;
+  border: solid 1px #ccc;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: inline-block;
+  margin: 0 auto 20px auto;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  > h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+  }
+}
+
+.form-group {
+  border: solid 1px $secondaryColor;
+  display: flex;
+
+  > div {
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:last-of-type {
+      border-right: none;
+    }
+
+    > span {
+      padding: 0 20px;
+      display: block;
+    }
+  }
+}
+
+.form-group-hover {
+  &:not([name='active']):hover {
+    background-color: $baseColor;
+    color: #fff;
+  }
+
+  &[name='active'] {
+    background-color: $baseColor;
+    color: #fff;
+  }
+}
+
+.form-group-label-back,
+.form-group-label-front {
+  background-color: $secondaryColor;
+  color: #fff;
 }

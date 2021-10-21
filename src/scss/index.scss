@@ -27,18 +27,6 @@ body {
 $baseColor: #0099ff;
 $secondaryColor: #00558e;
 
-header {
-  width: 100%;
-  height: 50px;
-  background-color: $secondaryColor;
-}
-
+@import 'header/header';
 @import 'main/main';
-
-footer {
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  color: #fff;
-  background-color: $secondaryColor;
-}
+@import 'footer/footer';
