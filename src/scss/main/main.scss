@@ -1,0 +1,18 @@
+main {
+  width: 100%;
+  flex: 1 1;
+
+  > div {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+.text-section {
+  width: calc(100% - 40px);
+  padding: 20px;
+}
+
+.text-section-text {
+}
