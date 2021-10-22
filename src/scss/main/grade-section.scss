@@ -1,0 +1,107 @@
+.grade-section {
+  @media screen and (min-width: 1000px) {
+    padding: 40px 60px;
+  }
+
+  @media screen and (max-width: 999px) {
+    padding: 40px 50px;
+  }
+
+  @media screen and (max-width: 899px) {
+    padding: 40px 20px;
+  }
+
+  @media screen and (max-width: 799px) {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    padding: 20px 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background-color: #fff;
+    transition: left 0.4s;
+
+    &[name='active'] {
+      left: 0%;
+    }
+  }
+
+  > h3 {
+    height: 46px;
+  }
+}
+
+.form-container {
+  width: 100%;
+  height: calc(100% - 46px - 20px - 40px - 20px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: inline-block;
+  margin: 0 auto 20px auto;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  > h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+  }
+}
+
+.form-group {
+  border: solid 1px $secondaryColor;
+  display: flex;
+
+  > div {
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:last-of-type {
+      border-right: none;
+    }
+
+    > span {
+      padding: 0 20px;
+      display: block;
+    }
+  }
+}
+
+.form-group-hover {
+  &:not([name='active']):hover {
+    background-color: $baseColor;
+    color: #fff;
+  }
+
+  &[name='active'] {
+    background-color: $baseColor;
+    color: #fff;
+  }
+}
+
+.form-group-label-back,
+.form-group-label-front {
+  background-color: $secondaryColor;
+  color: #fff;
+}
+
+#button-back-text {
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+}
+
+#button-send {
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+.text-section {
+  flex: 1 1;
+  background-color: #fff;
+  padding: 20px;
+
+  @media screen and (max-width: 799px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+  }
+
+  > h3 {
+    height: 46px;
+  }
+}
+
+#text-section-content {
+  font-size: 1.2em;
+  height: calc(100% - 40px - 46px - 20px - 40px - 20px - 2px);
+  overflow: auto;
+  padding: 20px;
+  border: solid 1px #ccc;
+  text-align: justify;
+}
+
+#button-grade-text {
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+}

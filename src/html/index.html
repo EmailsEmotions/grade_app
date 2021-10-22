@@ -13,35 +13,42 @@
   </head>
 
   <body>
-    <header></header>
+    <header>
+      <h1>Ocenianie tekstów</h1>
+    </header>
 
     <main>
       <div>
         <section class="text-section">
-          <div class="text-section-text">
-            <!-- <h2>Przeczytaj tekst a następnie wypełnij formularz</h2> -->
-            <h3 class="section-title">Przeczytaj to...</h3>
-            <div id="text-section-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-              officia quaerat, ducimus voluptatem facilis perferendis quam illo,
-              quos earum mollitia eius placeat. Sequi nobis dolor saepe, eius
-              quis odit ratione. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Quas officia quaerat, ducimus voluptatem facilis
-              perferendis quam illo, quos earum mollitia eius placeat. Sequi
-              nobis dolor saepe, eius quis odit ratione. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Quas officia quaerat, ducimus
-              voluptatem facilis perferendis quam illo, quos earum mollitia eius
-              placeat. Sequi nobis dolor saepe, eius quis odit ratione. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Quas officia
-              quaerat, ducimus voluptatem facilis perferendis quam illo, quos
-              earum mollitia eius placeat. Sequi nobis dolor saepe, eius quis
-              odit ratione.
+          <h3 class="section-title">Przeczytaj to...</h3>
+          <div id="text-section-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+            officia quaerat, ducimus voluptatem facilis perferendis quam illo,
+            quos earum mollitia eius placeat. Sequi nobis dolor saepe, eius quis
+            odit ratione. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Quas officia quaerat, ducimus voluptatem facilis perferendis
+            quam illo, quos earum mollitia eius placeat. Sequi nobis dolor
+            saepe, eius quis odit ratione. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Quas officia quaerat, ducimus
+            voluptatem facilis perferendis quam illo, quos earum mollitia eius
+            placeat. Sequi nobis dolor saepe, eius quis odit ratione. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Quas officia
+            quaerat, ducimus voluptatem facilis perferendis quam illo, quos
+            earum mollitia eius placeat. Sequi nobis dolor saepe, eius quis odit
+            ratione.
+          </div>
+          <div class="section-buttons">
+            <div class="left"></div>
+            <div class="filler"></div>
+            <div class="right">
+              <button id="button-grade-text" class="btn btn-primary">
+                Oceń tekst
+              </button>
             </div>
           </div>
-          <div class="text-section-buttons"></div>
         </section>
         <section class="grade-section">
-          <h3 class="section-title">...i oceń w skali 1-3</h3>
+          <h3 class="section-title">...i oceń</h3>
           <div class="form-container">
             <div class="form">
               <h4>Formalność</h4>
@@ -131,6 +138,17 @@
                   <span>Więcej</span>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="section-buttons">
+            <div class="left">
+              <button id="button-back-text" class="btn btn-primary">
+                Wróć do tekstu
+              </button>
+            </div>
+            <div class="filler"></div>
+            <div class="right">
+              <button id="button-send" class="btn btn-disabled">Wyślij</button>
             </div>
           </div>
         </section>

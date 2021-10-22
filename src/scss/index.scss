@@ -27,6 +27,7 @@ body {
 $baseColor: #0099ff;
 $secondaryColor: #00558e;
 
+@import 'common';
 @import 'header/header';
 @import 'main/main';
 @import 'footer/footer';
