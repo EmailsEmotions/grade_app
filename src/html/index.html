@@ -50,94 +50,112 @@
         <section class="grade-section">
           <h3 class="section-title">...i oceń</h3>
           <div class="form-container">
-            <div class="form">
-              <h4>Formalność</h4>
-              <div class="form-group">
-                <div class="form-group-label-back">
-                  <span>Mniej</span>
+            <div class="form-nav-button">
+              <img
+                id="form-button-previous"
+                src="../icons/arrow-right.svg"
+                alt="Previous"
+                name="inactive"
+              />
+            </div>
+            <div class="slide-container">
+              <div id="slide-1" class="slide-content">
+                <div>
+                  <div class="grade-container" data-value="2">
+                    <span>Formal</span>
+                    <div>3</div>
+                  </div>
+                  <div class="grade-container" data-value="1">
+                    <div>2</div>
+                  </div>
+                  <div class="grade-container" data-value="0">
+                    <div>1</div>
+                    <span>Informal</span>
+                  </div>
                 </div>
-                <div class="form-group-hover">1</div>
-                <div class="form-group-hover" name="active">2</div>
-                <div class="form-group-hover">3</div>
-                <div class="form-group-label-front">
-                  <span>Więcej</span>
+              </div>
+              <div id="slide-2" class="slide-content" name="hidden">
+                <div>
+                  <div class="grade-container" data-value="2">
+                    <span>Happy</span>
+                    <div>3</div>
+                  </div>
+                  <div class="grade-container" data-value="1">
+                    <div>2</div>
+                  </div>
+                  <div class="grade-container" data-value="0">
+                    <div>1</div>
+                    <span>Not happy</span>
+                  </div>
+                </div>
+              </div>
+              <div id="slide-3" class="slide-content" name="hidden">
+                <div>
+                  <div class="grade-container" data-value="2">
+                    <span>Sad</span>
+                    <div>3</div>
+                  </div>
+                  <div class="grade-container" data-value="1">
+                    <div>2</div>
+                  </div>
+                  <div class="grade-container" data-value="0">
+                    <div>1</div>
+                    <span>Not sad</span>
+                  </div>
+                </div>
+              </div>
+              <div id="slide-4" class="slide-content" name="hidden">
+                <div>
+                  <div class="grade-container" data-value="2">
+                    <span>Fear</span>
+                    <div>3</div>
+                  </div>
+                  <div class="grade-container" data-value="1">
+                    <div>2</div>
+                  </div>
+                  <div class="grade-container" data-value="0">
+                    <div>1</div>
+                    <span>No fear</span>
+                  </div>
+                </div>
+              </div>
+              <div id="slide-5" class="slide-content" name="hidden">
+                <div>
+                  <div class="grade-container" data-value="2">
+                    <span>Angry</span>
+                    <div>3</div>
+                  </div>
+                  <div class="grade-container" data-value="1">
+                    <div>2</div>
+                  </div>
+                  <div class="grade-container" data-value="0">
+                    <div>1</div>
+                    <span>Not angry</span>
+                  </div>
+                </div>
+              </div>
+              <div id="slide-6" class="slide-content" name="hidden">
+                <div>
+                  <div class="grade-container" data-value="2">
+                    <span>Surprise</span>
+                    <div>3</div>
+                  </div>
+                  <div class="grade-container" data-value="1">
+                    <div>2</div>
+                  </div>
+                  <div class="grade-container" data-value="0">
+                    <div>1</div>
+                    <span>No surprise</span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="form">
-              <h4>Happy</h4>
-              <div class="form-group">
-                <div class="form-group-label-back">
-                  <span>Mniej</span>
-                </div>
-                <div class="form-group-hover">1</div>
-                <div class="form-group-hover">2</div>
-                <div class="form-group-hover">3</div>
-                <div class="form-group-label-front">
-                  <span>Więcej</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="form">
-              <h4>Sad</h4>
-              <div class="form-group">
-                <div class="form-group-label-back">
-                  <span>Mniej</span>
-                </div>
-                <div class="form-group-hover">1</div>
-                <div class="form-group-hover">2</div>
-                <div class="form-group-hover">3</div>
-                <div class="form-group-label-front">
-                  <span>Więcej</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="form">
-              <h4>Fear</h4>
-              <div class="form-group">
-                <div class="form-group-label-back">
-                  <span>Mniej</span>
-                </div>
-                <div class="form-group-hover">1</div>
-                <div class="form-group-hover">2</div>
-                <div class="form-group-hover">3</div>
-                <div class="form-group-label-front">
-                  <span>Więcej</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="form">
-              <h4>Angry</h4>
-              <div class="form-group">
-                <div class="form-group-label-back">
-                  <span>Mniej</span>
-                </div>
-                <div class="form-group-hover">1</div>
-                <div class="form-group-hover">2</div>
-                <div class="form-group-hover">3</div>
-                <div class="form-group-label-front">
-                  <span>Więcej</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="form">
-              <h4>Surprise</h4>
-              <div class="form-group">
-                <div class="form-group-label-back">
-                  <span>Mniej</span>
-                </div>
-                <div class="form-group-hover">1</div>
-                <div class="form-group-hover">2</div>
-                <div class="form-group-hover">3</div>
-                <div class="form-group-label-front">
-                  <span>Więcej</span>
-                </div>
-              </div>
+            <div class="form-nav-button">
+              <img
+                id="form-button-next"
+                src="../icons/arrow-right.svg"
+                alt="Next"
+              />
             </div>
           </div>
           <div class="section-buttons">

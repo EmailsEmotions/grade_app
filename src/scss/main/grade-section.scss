@@ -1,14 +1,14 @@
 .grade-section {
   @media screen and (min-width: 1000px) {
-    padding: 40px 60px;
+    padding: 20px 60px;
   }
 
   @media screen and (max-width: 999px) {
-    padding: 40px 50px;
+    padding: 20px 50px;
   }
 
   @media screen and (max-width: 899px) {
-    padding: 40px 20px;
+    padding: 20px;
   }
 
   @media screen and (max-width: 799px) {
@@ -32,75 +32,244 @@
 }
 
 .form-container {
-  width: 100%;
+  position: relative;
   height: calc(100% - 46px - 20px - 40px - 20px);
   overflow: auto;
   display: flex;
-  flex-direction: column;
 }
 
-.form {
-  display: inline-block;
-  margin: 0 auto 20px auto;
+.form-nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-container {
+  @media screen and (min-width: 1000px) {
+    min-width: 200px;
+  }
+
+  position: relative;
+  min-width: 0;
+  flex: 1 1;
+  height: 100%;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  min-width: 164px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.5s;
+  background-color: #fff;
+
+  &[name='hidden'] {
+    left: 105%;
+  }
+}
+
+.slide-nav {
+  width: 100%;
+  height: 40px;
+}
+
+.grade-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 
   &:last-of-type {
     margin-bottom: 0;
   }
 
-  > h4 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 1.4em;
-  }
-}
-
-.form-group {
-  border: solid 1px $secondaryColor;
-  display: flex;
-
   > div {
-    min-width: 50px;
-    height: 50px;
+    @media screen and (min-width: 1100px) {
+      width: 120px;
+      height: 120px;
+      font-size: 2em;
+    }
+    @media screen and (max-width: 1099px) {
+      width: 110px;
+      height: 110px;
+      font-size: 2em;
+    }
+    @media screen and (max-width: 999px) {
+      width: 100px;
+      height: 100px;
+      font-size: 2em;
+    }
+    @media screen and (max-width: 899px) {
+      width: 90px;
+      height: 90px;
+      font-size: 1.8em;
+    }
+    @media screen and (max-width: 799px) {
+      width: 120px;
+      height: 120px;
+      font-size: 2em;
+    }
+    @media screen and (max-width: 699px) {
+      width: 100px;
+      height: 100px;
+      font-size: 2em;
+    }
+    @media screen and (max-width: 599px) {
+      width: 80px;
+      height: 80px;
+      font-size: 1.6em;
+    }
+    @media screen and (max-width: 499px) {
+      width: 60px;
+      height: 60px;
+      font-size: 1.2em;
+    }
+
+    margin: 0 auto;
+    border: solid 2px #ccc;
+    border-radius: 50%;
     display: flex;
+    color: #aaa;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
+    user-select: none;
 
-    &:last-of-type {
-      border-right: none;
+    &:not([name='active']):hover {
+      border-color: $baseColor;
+      color: $baseColor;
     }
 
-    > span {
-      padding: 0 20px;
-      display: block;
+    &:not([name='active']):active {
+      border-color: $baseColor;
+      background-color: $baseColor;
+      color: #fff;
+    }
+
+    &[name='active'] {
+      border-color: $baseColor;
+      background-color: $baseColor;
+      color: #fff;
+    }
+  }
+
+  > span {
+    width: 100%;
+    height: 30px;
+    font-size: 1.2em;
+    display: block;
+
+    &:first-child {
+      margin-bottom: 10px;
+    }
+
+    &:last-child {
+      margin-top: 10px;
     }
   }
 }
 
-.form-group-hover {
-  &:not([name='active']):hover {
-    background-color: $baseColor;
-    color: #fff;
+#form-button-previous {
+  &[name='inactive'] {
+    box-shadow: 0px -8px 0px #aaa;
   }
 
-  &[name='active'] {
-    background-color: $baseColor;
-    color: #fff;
+  &:not([name='inactive']):hover {
+    box-shadow: 0px -6px 0px $secondaryColor;
+    transform: rotate(180deg) translateY(-2px);
   }
+
+  &:not([name='inactive']):active {
+    box-shadow: 0px 0px 0px $secondaryColor;
+    transform: rotate(180deg) translateY(-8px);
+  }
+
+  box-shadow: 0px -8px 0px $secondaryColor;
+  transform: rotate(180deg);
 }
 
-.form-group-label-back,
-.form-group-label-front {
-  background-color: $secondaryColor;
-  color: #fff;
+#form-button-next {
+  &[name='inactive'] {
+    box-shadow: 0px 8px 0px #aaa;
+  }
+
+  &:not([name='inactive']):hover {
+    box-shadow: 0px 6px 0px $secondaryColor;
+    transform: translateY(2px);
+  }
+
+  &:not([name='inactive']):active {
+    box-shadow: 0px 0px 0px $secondaryColor;
+    transform: translateY(8px);
+  }
+
+  box-shadow: 0px 8px 0px $secondaryColor;
+}
+
+#form-button-next,
+#form-button-previous {
+  @media screen and (min-width: 1100px) {
+    width: 32px;
+    height: 32px;
+    padding: 15px;
+  }
+  @media screen and (max-width: 1099px) {
+    width: 32px;
+    height: 32px;
+    padding: 12px;
+  }
+  @media screen and (max-width: 999px) {
+    width: 28px;
+    height: 28px;
+    padding: 12px;
+  }
+  @media screen and (max-width: 899px) {
+    width: 26px;
+    height: 26px;
+    padding: 10px;
+  }
+  @media screen and (max-width: 799px) {
+    width: 32px;
+    height: 32px;
+    padding: 15px;
+  }
+  @media screen and (max-width: 699px) {
+    width: 32px;
+    height: 32px;
+    padding: 12px;
+  }
+  @media screen and (max-width: 599px) {
+    width: 28px;
+    height: 28px;
+    padding: 12px;
+  }
+  @media screen and (max-width: 499px) {
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+  }
+
+  margin: 0 2px;
+  cursor: pointer;
+  background-color: $baseColor;
+  border-radius: 50%;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &[name='inactive'] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
 }
 
 #button-back-text {
-  @media screen and (min-width: 800px) {
-    display: none;
-  }
-}
-
-#button-send {
   @media screen and (min-width: 800px) {
     display: none;
   }
