@@ -72,21 +72,59 @@ export class GradeSection {
     const found = this.grades.findIndex((grade) => grade === null);
 
     // Found null
-    if (found !== -1) {
+    if (found !== -1 || !this.parent.canShowGrading) {
       id('button-send').classList.remove('btn-primary');
       id('button-send').classList.add('btn-disabled');
       return false;
     } else {
       id('button-send').classList.remove('btn-disabled');
       id('button-send').classList.add('btn-primary');
-      return true;
+
+      return this.parent.canShowGrading;
     }
   }
 
   private send() {
     if (this.checkSend()) {
-      console.log('POSZŁO: ', this.grades.toString());
+      return new Promise((resolve, reject) => {
+        this.showLoading();
+
+        const xmlHttp = new XMLHttpRequest();
+
+        xmlHttp.onreadystatechange = () => {
+          if (xmlHttp.readyState === 4) {
+            this.hideLoading();
+
+            if (xmlHttp.status === 200) {
+              try {
+                const json = JSON.parse(xmlHttp.responseText);
+
+                resolve(xmlHttp);
+              } catch (e) {
+                this.hideLoading();
+                alert('Nie udało się wysłać oceny.');
+                reject(xmlHttp);
+              }
+            } else {
+              reject(xmlHttp);
+            }
+          }
+        };
+
+        xmlHttp.open('GET', 'https://damboy.sytes.net/ee/fakeSend.php');
+        xmlHttp.send();
+      });
     }
+  }
+
+  private showLoading() {
+    id('button-send-text').setAttribute('name', 'hidden');
+    id('button-send-loading').removeAttribute('name');
+  }
+
+  private hideLoading() {
+    id('button-send-text').removeAttribute('name');
+    id('button-send-loading').setAttribute('name', 'hidden');
   }
 
   private handleGradeClick(
@@ -120,6 +158,10 @@ export class GradeSection {
 
     id('form-button-next').addEventListener('click', () => {
       this.next();
+    });
+
+    id('button-send').addEventListener('click', () => {
+      this.send();
     });
 
     window.addEventListener('keydown', (ev) => {

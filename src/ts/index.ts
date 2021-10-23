@@ -13,10 +13,19 @@ import { GradeSection } from './sections/grade-section';
 // const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 class App {
+  private sectionManager: SectionManager;
+  private textSection: TextSection;
+  private gradeSection: GradeSection;
+
   constructor() {
-    const sectionManager = new SectionManager();
-    const textSection = new TextSection(sectionManager);
-    const gradeSection = new GradeSection(sectionManager);
+    this.sectionManager = new SectionManager();
+    this.textSection = new TextSection(this.sectionManager);
+    this.gradeSection = new GradeSection(this.sectionManager);
+
+    this.sectionManager.addTextSection(this.textSection);
+    this.sectionManager.addGradeSection(this.gradeSection);
+
+    this.sectionManager.init();
   }
 }
 

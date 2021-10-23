@@ -14,33 +14,5 @@ main {
   }
 }
 
-.section-title {
-  font-size: 2.4em;
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.section-buttons {
-  width: 100%;
-  height: 40px;
-  display: flex;
-  margin-top: 20px;
-
-  .filler {
-    flex: 1 1;
-  }
-
-  .center {
-    > * {
-      margin-right: 20px;
-
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
-  }
-}
-
 @import './text-section';
 @import './grade-section';

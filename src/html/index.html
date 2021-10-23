@@ -22,20 +22,8 @@
         <section class="text-section">
           <h3 class="section-title">Przeczytaj to...</h3>
           <div id="text-section-content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-            officia quaerat, ducimus voluptatem facilis perferendis quam illo,
-            quos earum mollitia eius placeat. Sequi nobis dolor saepe, eius quis
-            odit ratione. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Quas officia quaerat, ducimus voluptatem facilis perferendis
-            quam illo, quos earum mollitia eius placeat. Sequi nobis dolor
-            saepe, eius quis odit ratione. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Quas officia quaerat, ducimus
-            voluptatem facilis perferendis quam illo, quos earum mollitia eius
-            placeat. Sequi nobis dolor saepe, eius quis odit ratione. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Quas officia
-            quaerat, ducimus voluptatem facilis perferendis quam illo, quos
-            earum mollitia eius placeat. Sequi nobis dolor saepe, eius quis odit
-            ratione.
+            <p id="text-section-p"></p>
+            <div class="loading"><div></div></div>
           </div>
           <div class="section-buttons">
             <div class="left"></div>
@@ -175,7 +163,10 @@
             <div class="filler"></div>
             <div class="right">
               <button id="button-send" class="btn btn-disabled" tabindex="-1">
-                Wyślij
+                <span id="button-send-text">Wyślij</span>
+                <div id="button-send-loading" class="loading" name="hidden">
+                  <div></div>
+                </div>
               </button>
             </div>
           </div>

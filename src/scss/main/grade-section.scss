@@ -274,3 +274,22 @@
     display: none;
   }
 }
+
+#button-send-text {
+  &[name='hidden'] {
+    display: none;
+  }
+}
+
+#button-send-loading {
+  margin: 8px 0;
+  width: 24px;
+  height: 24px;
+
+  > div {
+    border-right-color: #fff;
+    border-left-color: #fff;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+}
