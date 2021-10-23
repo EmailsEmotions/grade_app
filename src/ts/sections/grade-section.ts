@@ -4,6 +4,7 @@ import { id } from '../utils';
 export class GradeSection {
   private parent: SectionManager;
   private currentlyGrading = 1;
+  private loading = false;
   private grades = [null, null, null, null, null, null] as number[];
 
   constructor(parent: SectionManager) {
@@ -72,7 +73,7 @@ export class GradeSection {
     const found = this.grades.findIndex((grade) => grade === null);
 
     // Found null
-    if (found !== -1 || !this.parent.canShowGrading) {
+    if (found !== -1 || !this.parent.canShowGrading || this.loading) {
       id('button-send').classList.remove('btn-primary');
       id('button-send').classList.add('btn-disabled');
       return false;
@@ -86,6 +87,8 @@ export class GradeSection {
 
   private send() {
     if (this.checkSend()) {
+      this.loading = true;
+      this.checkSend();
       return new Promise((resolve, reject) => {
         this.showLoading();
 
@@ -94,10 +97,14 @@ export class GradeSection {
         xmlHttp.onreadystatechange = () => {
           if (xmlHttp.readyState === 4) {
             this.hideLoading();
+            this.loading = false;
+            this.checkSend();
 
             if (xmlHttp.status === 200) {
               try {
                 const json = JSON.parse(xmlHttp.responseText);
+                this.parent.restart();
+                this.checkSend();
 
                 resolve(xmlHttp);
               } catch (e) {
@@ -117,6 +124,20 @@ export class GradeSection {
     }
   }
 
+  public restart() {
+    this.moveTo(1);
+    this.grades = [null, null, null, null, null, null];
+
+    const limit = this.grades.length;
+    for (let i = 1; i <= limit; i++) {
+      const allGrades = id(`slide-${i}`).querySelectorAll('.grade-container');
+
+      allGrades.forEach((grade: HTMLElement) => {
+        grade.querySelector('div').removeAttribute('name');
+      });
+    }
+  }
+
   private showLoading() {
     id('button-send-text').setAttribute('name', 'hidden');
     id('button-send-loading').removeAttribute('name');
@@ -132,6 +153,9 @@ export class GradeSection {
     allGrades: NodeListOf<Element>,
     clickedGrade: HTMLElement
   ) {
+    if (this.loading || !this.parent.canShowGrading) {
+      return;
+    }
     // Clear selection
     allGrades.forEach((_grade) => {
       _grade.querySelector('div').removeAttribute('name');

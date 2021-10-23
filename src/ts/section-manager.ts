@@ -56,6 +56,19 @@ export class SectionManager {
     clss('grade-section')[0].removeAttribute('name');
   }
 
+  public restart() {
+    this.gradeSection.restart();
+    this.setGrading(false);
+    this.textSection
+      .getText()
+      .then(() => {
+        this.setGrading(true);
+      })
+      .catch((err) => {
+        alert('Nie udało się wczytać tekstu, spróbuj ponownie');
+      });
+  }
+
   private assignListeners() {
     window.addEventListener('keydown', (ev) => {
       if (ev.code === 'KeyS') {
