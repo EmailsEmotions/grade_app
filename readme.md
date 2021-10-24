@@ -5,7 +5,7 @@ Text grading app
 Working with:
 | Technology | Version |
 | ---------- |:-----:|
-| NodeJS | 14.16.0 |
+| NodeJS | 14.16.1 |
 | npm | 6.14.12 |
 
 ## Developing

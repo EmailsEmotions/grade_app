@@ -32,6 +32,13 @@ class App {
 const WindowAction = {
   loaded() {
     this.resized();
+    this.registerServiceWorker();
+  },
+
+  registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../sw.js');
+    }
   },
 
   resized() {
