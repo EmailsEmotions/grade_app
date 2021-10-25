@@ -17,7 +17,19 @@
 
   <body>
     <header>
-      <h1>Ocenianie tekstów</h1>
+      <div class="header-left">
+        <div></div>
+      </div>
+      <div class="header-filler"></div>
+      <div class="header-center">
+        <h1>Ocenianie tekstów</h1>
+      </div>
+      <div class="header-filler"></div>
+      <div class="header-right">
+        <div id="header-faq">
+          <img src="../icons/question-mark.svg" alt="Pomoc" />
+        </div>
+      </div>
     </header>
 
     <main>
@@ -29,7 +41,15 @@
             <div class="loading"><div></div></div>
           </div>
           <div class="section-buttons">
-            <div class="left"></div>
+            <div class="left">
+              <button
+                id="button-change-text"
+                class="btn btn-transparent"
+                tabindex="-1"
+              >
+                Zmień tekst
+              </button>
+            </div>
             <div class="filler"></div>
             <div class="right">
               <button
@@ -69,7 +89,7 @@
                   </div>
                 </div>
               </div>
-              <div id="slide-2" class="slide-content" name="hidden">
+              <div id="slide-2" class="slide-content" name="right">
                 <div>
                   <div class="grade-container" data-value="2">
                     <span>Happy</span>
@@ -84,7 +104,7 @@
                   </div>
                 </div>
               </div>
-              <div id="slide-3" class="slide-content" name="hidden">
+              <div id="slide-3" class="slide-content" name="right">
                 <div>
                   <div class="grade-container" data-value="2">
                     <span>Sad</span>
@@ -99,7 +119,7 @@
                   </div>
                 </div>
               </div>
-              <div id="slide-4" class="slide-content" name="hidden">
+              <div id="slide-4" class="slide-content" name="right">
                 <div>
                   <div class="grade-container" data-value="2">
                     <span>Fear</span>
@@ -114,7 +134,7 @@
                   </div>
                 </div>
               </div>
-              <div id="slide-5" class="slide-content" name="hidden">
+              <div id="slide-5" class="slide-content" name="right">
                 <div>
                   <div class="grade-container" data-value="2">
                     <span>Angry</span>
@@ -129,7 +149,7 @@
                   </div>
                 </div>
               </div>
-              <div id="slide-6" class="slide-content" name="hidden">
+              <div id="slide-6" class="slide-content" name="right">
                 <div>
                   <div class="grade-container" data-value="2">
                     <span>Surprise</span>
@@ -176,6 +196,49 @@
         </section>
       </div>
     </main>
+
+    <div id="help-dialog" class="dialog-container">
+      <div id="help-dialog-content" class="dialog">
+        <div class="dialog-header">
+          <h4>Przydatne skróty</h4>
+        </div>
+        <div class="dialog-content">
+          <div class="help-dialog-post">
+            <div class="key">1, 2, 3</div>
+            <div class="description">- oceń tekst na 1, 2, 3</div>
+          </div>
+          <div class="help-dialog-post">
+            <div class="key">s</div>
+            <div class="description">
+              - zmień pomiędzy tekstem a ocenianiem (mobile)
+            </div>
+          </div>
+          <div class="help-dialog-post">
+            <div class="key">r</div>
+            <div class="description">- załaduj inny tekst</div>
+          </div>
+          <div class="help-dialog-post">
+            <div class="key">enter</div>
+            <div class="description">- zatwierdź i wyślij</div>
+          </div>
+          <div class="help-dialog-post">
+            <div class="key">&larr;, &rarr;</div>
+            <div class="description">
+              - poprzednia, następna kategoria oceny
+            </div>
+          </div>
+          <div class="help-dialog-post">
+            <div class="key">h</div>
+            <div class="description">- otwiera/zamyka to okno</div>
+          </div>
+        </div>
+        <div class="dialog-buttons">
+          <button id="help-dialog-close" class="btn btn-transparent">
+            Zamknij
+          </button>
+        </div>
+      </div>
+    </div>
 
     <footer>EmailsEmotions Team &copy; 2021</footer>
   </body>

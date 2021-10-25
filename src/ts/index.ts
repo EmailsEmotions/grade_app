@@ -8,6 +8,7 @@ import '../icon/Logo16.png';
 import { SectionManager } from './section-manager';
 import { TextSection } from './sections/text-section';
 import { GradeSection } from './sections/grade-section';
+import { HelpDialog } from './dialog';
 
 // Constant for iOS
 // const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -18,6 +19,8 @@ class App {
   private gradeSection: GradeSection;
 
   constructor() {
+    new HelpDialog();
+
     this.sectionManager = new SectionManager();
     this.textSection = new TextSection(this.sectionManager);
     this.gradeSection = new GradeSection(this.sectionManager);

@@ -5,6 +5,7 @@ export class TextSection {
   private parent: SectionManager;
   private text: string;
   private textId: string;
+  public loading: boolean;
 
   constructor(parent: SectionManager) {
     this.parent = parent;
@@ -49,21 +50,37 @@ export class TextSection {
   }
 
   private showLoading() {
+    this.loading = true;
     id('text-section-p').innerHTML = '';
     id('text-section-content')
       .getElementsByClassName('loading')[0]
       .removeAttribute('name');
+
+    id('button-change-text').setAttribute('name', 'inactive');
   }
 
   private hideLoading() {
+    this.loading = false;
     id('text-section-content')
       .getElementsByClassName('loading')[0]
       .setAttribute('name', 'hidden');
+
+    id('button-change-text').removeAttribute('name');
   }
 
   private assignListeners() {
     id('button-grade-text').addEventListener('click', () => {
       this.parent.showGrading();
+    });
+
+    id('button-change-text').addEventListener('click', () => {
+      this.parent.restart();
+    });
+
+    window.addEventListener('keydown', (ev) => {
+      if (ev.code === 'KeyR') {
+        this.parent.restart();
+      }
     });
   }
 }

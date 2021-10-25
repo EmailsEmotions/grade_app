@@ -5,6 +5,7 @@ var filesToCache = [
   '/css/index.css',
   '/js/index.js',
   '/icons/arrow-right.svg',
+  '/icons/question-mark.svg',
   '/icon/Logo16.png',
   '/icon/Logo32.png',
   '/icon/Logo64.png',

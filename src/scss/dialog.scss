@@ -1,0 +1,71 @@
+.dialog-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  &[name='shown'] {
+    display: flex;
+  }
+}
+
+.dialog {
+  background-color: #fff;
+  min-width: 400px;
+}
+
+.dialog-header {
+  width: 100%;
+  height: 50px;
+  background-color: $secondaryColor;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-indent: 20px;
+  font-size: 1.2em;
+}
+
+.dialog-content {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px - 50px - 50px);
+  padding: 20px;
+}
+
+.help-dialog-post {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .key {
+    padding: 5px;
+    border: solid 2px #a3a3a3;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    color: #666;
+    font-family: 'Consolas';
+    margin-right: 10px;
+  }
+
+  .description {
+  }
+}
+
+.dialog-buttons {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

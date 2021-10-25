@@ -57,16 +57,18 @@ export class SectionManager {
   }
 
   public restart() {
-    this.gradeSection.restart();
-    this.setGrading(false);
-    this.textSection
-      .getText()
-      .then(() => {
-        this.setGrading(true);
-      })
-      .catch((err) => {
-        alert('Nie udało się wczytać tekstu, spróbuj ponownie');
-      });
+    if (!this.textSection.loading) {
+      this.gradeSection.restart();
+      this.setGrading(false);
+      this.textSection
+        .getText()
+        .then(() => {
+          this.setGrading(true);
+        })
+        .catch((err) => {
+          alert('Nie udało się wczytać tekstu, spróbuj ponownie');
+        });
+    }
   }
 
   private assignListeners() {

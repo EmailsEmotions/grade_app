@@ -44,28 +44,49 @@ export class GradeSection {
     this.currentlyGrading = which;
 
     // Show all till `which`
-    for (let i = 1; i <= which; i++) {
-      id(`slide-${i}`).removeAttribute('name');
+    for (let i = 1; i < which; i++) {
+      id(`slide-${i}`).setAttribute('name', 'left');
     }
+
+    // Show all till `which`
+    id(`slide-${which}`).removeAttribute('name');
 
     // Hide all after `which`
     const limit = this.grades.length;
     for (let i = which + 1; i <= limit; i++) {
-      id(`slide-${i}`).setAttribute('name', 'hidden');
+      id(`slide-${i}`).setAttribute('name', 'right');
     }
 
     this.checkArrows();
   }
 
-  private previous() {
+  private previous(usedKey = false) {
     if (this.canGoBack()) {
       this.moveTo(this.currentlyGrading - 1);
+
+      if (usedKey) {
+        id('form-button-previous').setAttribute('name', 'clicked');
+
+        setTimeout(() => {
+          id('form-button-previous').removeAttribute('name');
+          this.checkArrows();
+        }, 100);
+      }
     }
   }
 
-  private next() {
+  private next(usedKey = false) {
     if (this.canGoNext()) {
       this.moveTo(this.currentlyGrading + 1);
+
+      if (usedKey) {
+        id('form-button-next').setAttribute('name', 'clicked');
+
+        setTimeout(() => {
+          id('form-button-next').removeAttribute('name');
+          this.checkArrows();
+        }, 100);
+      }
     }
   }
 
@@ -190,11 +211,11 @@ export class GradeSection {
 
     window.addEventListener('keydown', (ev) => {
       if (ev.code === 'ArrowLeft') {
-        this.previous();
+        this.previous(true);
       }
 
       if (ev.code === 'ArrowRight') {
-        this.next();
+        this.next(true);
       }
 
       if (

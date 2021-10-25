@@ -33,6 +33,19 @@
   color: #fff;
 }
 
+.btn-transparent {
+  background-color: transparent;
+  color: #666;
+
+  &:not([name='inactive']):hover {
+    background-color: #f3f3f3;
+  }
+
+  &:not([name='inactive']):active {
+    background-color: #eee;
+  }
+}
+
 .btn-disabled {
   background-color: #ccc;
   color: #fff;
