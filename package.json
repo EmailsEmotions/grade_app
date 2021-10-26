@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode='development' --config webpack.config.js --watch",
     "build": "webpack --mode='production' --config webpack.config.js",
-    "serve": "node server.js"
+    "start": "node server.js"
   },
   "author": "EmailsEmotions Team",
   "license": "MIT",
@@ -39,5 +39,8 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
